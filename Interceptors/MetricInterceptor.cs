@@ -1,11 +1,8 @@
 ﻿using AspectInjector.Broker;
 using System;
 using System.Diagnostics;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 using wpfPocAPI.Controllers;
 using wpfPocAPI.Models;
 using wpfPocAPI.Models.Enums;
@@ -29,7 +26,7 @@ namespace wpfPocAPI.Interceptors
 
             _metric = MetricController.GetMetricByName(fullFileName);
 
-            if (_metric.Type == MetricType.Counter || _metric.Type == MetricType.Gauge)
+            if (_metric.Operation != MetricOperationType.Timer)
             {
                 try
                 {
@@ -51,7 +48,7 @@ namespace wpfPocAPI.Interceptors
         {
             _stopwatch.Stop();
 
-            if (_metric.Type == MetricType.Histogram)
+            if (_metric.Operation == MetricOperationType.Timer && _metric.Type == MetricType.Histogram)
             {
                 HistogramMetric histogram = (HistogramMetric)_metric;
                 histogram.ElapsedTimeMs = _stopwatch.ElapsedMilliseconds;

@@ -6,14 +6,14 @@ using wpfPocAPI.Interceptors;
 
 namespace wpfPocAPI.Service
 {
-    internal class Services
+    public class Services
     {
-        internal Services()
+        public Services()
         {
         }
 
         private static Services _instance;
-        internal static Services Instance 
+        public static Services Instance 
         { 
             get
             {
@@ -26,7 +26,7 @@ namespace wpfPocAPI.Service
         }
 
         [MetricInterceptor]
-        internal void SaveProject()
+        public void SaveProject()
         {
             MessageBox.Show("Entrou no método SaveProject da classe Services");
         }
@@ -45,6 +45,24 @@ namespace wpfPocAPI.Service
                     MessageBox.Show($"Request failed with status code: {response.StatusCode}");
                 }
             }
+        }
+
+        [MetricInterceptor]
+        public void UpdateAdvancedBOM()
+        {
+            MessageBox.Show("Uploading advanced BOM on SAP...");
+        }
+
+        [MetricInterceptor]
+        public void Checkin()
+        {
+            MessageBox.Show("Check-in document on SAP...");
+        }
+
+        [MetricInterceptor]
+        public void GenerateProject()
+        {
+            MessageBox.Show("Generating project...");
         }
     }
 }

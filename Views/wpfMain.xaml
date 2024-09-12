@@ -19,6 +19,8 @@
         </Grid.RowDefinitions>
 
         <Button Command="{Binding SaveProjectCommand}" Width="100" Height="40">Save Project</Button>
-        
+        <Button Command="{Binding UpdateAdvancedBomCommand}" Width="130" Height="40" Grid.Column="1"> Update Advanced BOM</Button>
+        <Button Command="{Binding CheckinCommand}" Width="100" Height="40" Grid.Column="2">Check-in</Button>
+        <Button Command="{Binding Generate3DCommand}" Width="100" Height="40" Grid.Column="3">Generate Project</Button>
     </Grid>
 </Window>

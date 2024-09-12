@@ -12,12 +12,34 @@ namespace wpfPocAPI.ViewModels
     public class MainVM : GenericPropertiesVM
     {
         public ICommand SaveProjectCommand { get; set; }
+        public ICommand UpdateAdvancedBomCommand { get; set; }
+        public ICommand CheckinCommand { get; set; }
+        public ICommand Generate3DCommand { get; set; }
 
 
         public MainVM()
         {
             Open();
             SaveProjectCommand = new DelegateCommand(SaveProject);
+            UpdateAdvancedBomCommand = new DelegateCommand(UpdateAdvancedBOM);
+            CheckinCommand = new DelegateCommand(Checkin);
+            Generate3DCommand = new DelegateCommand(GenerateProject);
+        }
+
+
+        private void GenerateProject(object obj)
+        {
+            Services.Instance.GenerateProject();
+        }
+
+        private void Checkin(object obj)
+        {
+            Services.Instance.Checkin();
+        }
+
+        private void UpdateAdvancedBOM(object obj)
+        {
+            Services.Instance.UpdateAdvancedBOM();
         }
 
         [MetricInterceptor]
