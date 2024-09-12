@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wpfPocAPI.Models;
+using wpfPocAPI.Models.Enums;
+using wpfPocAPI.Resources;
 
 namespace wpfPocAPI.Controllers
 {
@@ -13,7 +15,9 @@ namespace wpfPocAPI.Controllers
 
         static MetricController()
         {
-            _metricsDictionary.Add("wpfPocAPI.Service.Services.SaveProject", new Metric("gis_usuarios_online_total", Models.Enums.MetricType.Gauge));
+            _metricsDictionary.Add("wpfPocAPI.ViewModels.MainVM.Shutdown", new Metric("gis_usuarios_online_total", MetricType.Gauge, MetricOperationType.Decrement, WegUnities.WTD_BNU.GetDescription().Split()));
+            _metricsDictionary.Add("wpfPocAPI.ViewModels.MainVM.Open", new Metric("gis_usuarios_online_total", MetricType.Gauge, MetricOperationType.Increment, WegUnities.WTD_BNU.GetDescription().Split()));
+            _metricsDictionary.Add("wpfPocAPI.Service.Services.SaveProject", new HistogramMetric("gis_tempo_salvarproj_ms", MetricType.Histogram, MetricOperationType.Timer));
         }
 
         internal static Metric GetMetricByName(string name)

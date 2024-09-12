@@ -14,17 +14,19 @@ namespace wpfPocAPI.Models
 
         }
 
-        public Metric(string name, MetricType type)
+        public Metric(string name, MetricType type, MetricOperationType operation)
         {
             MetricName = name;
             Type = type;
+            Operation = operation;
         }
 
-        public Metric(string name, MetricType type, string[] labels)
+        public Metric(string name, MetricType type, MetricOperationType operation, string[] labels)
         {
             MetricName = name;
             Type = type;
             Labels = labels;
+            Operation = operation;
         }
 
         public string MetricName { get; private set; }

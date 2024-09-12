@@ -106,9 +106,14 @@
     </Compile>
     <Compile Include="Controllers\MetricController.cs" />
     <Compile Include="Interceptors\MetricInterceptor.cs" />
+    <Compile Include="Models\Enums\Enum.cs" />
     <Compile Include="Models\Enums\MetricEnum.cs" />
+    <Compile Include="Models\HistogramMetric.cs" />
     <Compile Include="Models\Metric.cs" />
+    <Compile Include="Models\WegUnity.cs" />
+    <Compile Include="Resources\AttributeExtensions.cs" />
     <Compile Include="Resources\DelegateCommand.cs" />
+    <Compile Include="Resources\IdExpressionAttribute.cs" />
     <Compile Include="Service\Services.cs" />
     <Compile Include="Resources\GenericPropertiesVM.cs" />
     <Compile Include="ViewModels\MainVM.cs" />
