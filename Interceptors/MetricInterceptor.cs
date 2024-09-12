@@ -65,6 +65,7 @@ namespace wpfPocAPI.Interceptors
                     MessageBox.Show(ex.Message);
                 }
             }
+            _stopwatch.Reset();
         }
     }
 }
