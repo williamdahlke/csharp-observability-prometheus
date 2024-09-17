@@ -140,6 +140,7 @@
     <Compile Include="Models\HistogramMetric.cs" />
     <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\WegUnity.cs" />
+    <Compile Include="Models\WegUser.cs" />
     <Compile Include="Resources\AttributeExtensions.cs" />
     <Compile Include="Resources\DelegateCommand.cs" />
     <Compile Include="Resources\IdExpressionAttribute.cs" />

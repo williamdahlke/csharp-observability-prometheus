@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wpfPocAPI.Models.Enums;
+using wpfPocAPI.Resources;
 
 namespace wpfPocAPI.Models
 {
@@ -33,5 +34,14 @@ namespace wpfPocAPI.Models
         public MetricType Type { get; private set; }
         public MetricOperationType Operation { get; set; }
         public string[] Labels { get; private set; }
+        public WegUser User
+        {
+            get
+            {
+                //return BaseCAT.CurrentUser.Name
+                return new WegUser("williamgd", WegUnities.WTD_BNU.GetDescription());
+            }
+        }
+
     }
 }
