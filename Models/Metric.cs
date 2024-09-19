@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wpfPocAPI.Models.Enums;
+﻿using wpfPocAPI.Models.Enums;
 using wpfPocAPI.Resources;
 
 namespace wpfPocAPI.Models
@@ -12,11 +7,6 @@ namespace wpfPocAPI.Models
     {
         public Metric()
         {
-            double divisor = 0;
-            double x = 1 / divisor;
-            string w = null;
-            //int count = w.Length;
-
         }
 
         public Metric(string name, MetricType type, MetricOperationType operation)
