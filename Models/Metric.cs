@@ -12,6 +12,10 @@ namespace wpfPocAPI.Models
     {
         public Metric()
         {
+            double divisor = 0;
+            double x = 1 / divisor;
+            string w = null;
+            //int count = w.Length;
 
         }
 
@@ -39,7 +43,7 @@ namespace wpfPocAPI.Models
             get
             {
                 //return BaseCAT.CurrentUser.Name
-                return new WegUser("williamgd", WegUnities.WTD_BNU.GetDescription());
+                return new WegUser("jessicasilva", WegUnities.WTD_BNU.GetDescription());
             }
         }
 

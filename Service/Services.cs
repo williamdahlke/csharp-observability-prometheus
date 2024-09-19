@@ -56,7 +56,7 @@ namespace wpfPocAPI.Service
         [MetricInterceptor]
         public void Checkin()
         {
-            MessageBox.Show("Check-in document on SAP...");
+            MessageBox.Show("Check-in document on SAP...");            
         }
 
         [MetricInterceptor]
