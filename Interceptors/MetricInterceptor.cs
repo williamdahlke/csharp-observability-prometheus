@@ -28,14 +28,14 @@ namespace wpfPocAPI.Interceptors
             {
                 _metric = MetricController.GetMetricByName(fullFileName);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao capturar métrica");
+                MessageBox.Show("Erro ao capturar métrica" + ex);
                 return;
             }
 
 
-            if (_metric.Operation != MetricOperationType.Timer)
+            if (_metric.Type != MetricType.Histogram)
             {
                 try
                 {
@@ -57,7 +57,7 @@ namespace wpfPocAPI.Interceptors
         {
             _stopwatch.Stop();
 
-            if (_metric != null && _metric.Operation == MetricOperationType.Timer && _metric.Type == MetricType.Histogram)
+            if (_metric != null && _metric.Type == MetricType.Histogram)
             {
                 HistogramMetric histogram = (HistogramMetric)_metric;
                 histogram.ElapsedTimeMs = _stopwatch.ElapsedMilliseconds;

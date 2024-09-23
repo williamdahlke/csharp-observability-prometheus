@@ -5,37 +5,18 @@ namespace wpfPocAPI.Models
 {
     public class Metric
     {
-        public Metric()
-        {
-        }
+        public string MetricName { get; set; }
+        public string Help { get; set; }
+        public MetricType Type { get; set; }
+        public string[] LabelNames { get; set; }
+        public string[] LabelValues { get; set; }
 
-        public Metric(string name, MetricType type, MetricOperationType operation)
-        {
-            MetricName = name;
-            Type = type;
-            Operation = operation;
-        }
-
-        public Metric(string name, MetricType type, MetricOperationType operation, string[] labels)
-        {
-            MetricName = name;
-            Type = type;
-            Labels = labels;
-            Operation = operation;
-        }
-
-        public string MetricName { get; private set; }
-        public MetricType Type { get; private set; }
-        public MetricOperationType Operation { get; set; }
-        public string[] Labels { get; private set; }
         public WegUser User
         {
             get
             {
-                //return BaseCAT.CurrentUser.Name
                 return new WegUser("jessicasilva", WegUnities.WTD_BNU.GetDescription());
             }
         }
-
     }
 }

@@ -133,10 +133,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Catalogue\MetricCatalogue.cs" />
     <Compile Include="Controllers\MetricController.cs" />
     <Compile Include="Interceptors\MetricInterceptor.cs" />
     <Compile Include="Models\Enums\Enum.cs" />
     <Compile Include="Models\Enums\MetricEnum.cs" />
+    <Compile Include="Models\GaugeMetric.cs" />
     <Compile Include="Models\HistogramMetric.cs" />
     <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\WegUnity.cs" />

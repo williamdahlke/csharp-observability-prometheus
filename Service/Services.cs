@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using wpfPocAPI.Controllers;
 using wpfPocAPI.Interceptors;
 
 namespace wpfPocAPI.Service
@@ -10,6 +11,7 @@ namespace wpfPocAPI.Service
     {
         public Services()
         {
+            MetricController = new MetricController();
         }
 
         private static Services _instance;
@@ -24,6 +26,8 @@ namespace wpfPocAPI.Service
                 return _instance;
             }
         }
+
+        public MetricController MetricController { get; set; }
 
         [MetricInterceptor]
         public void SaveProject()

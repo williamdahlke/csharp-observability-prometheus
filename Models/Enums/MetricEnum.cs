@@ -18,7 +18,6 @@ namespace wpfPocAPI.Models.Enums
     {
         Undefined = 0,
         Increment = 1,
-        Decrement = 2,
-        Timer = 3
+        Decrement = 2
     }
 }
