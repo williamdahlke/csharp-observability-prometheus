@@ -24,10 +24,10 @@ namespace wpfPocAPI.Catalogue
                 LabelValues = WegUnities.WTD_BNU.GetDescription().Split()
             };
 
-            usersOnline.Operation = MetricOperationType.Increment;
+            usersOnline.Operation = MetricOperationType.Decrement;
             _metricsDictionary.Add("wpfPocAPI.ViewModels.MainVM.Shutdown", usersOnline);
 
-            usersOnline.Operation = MetricOperationType.Decrement;
+            usersOnline.Operation = MetricOperationType.Increment;
             _metricsDictionary.Add("wpfPocAPI.ViewModels.MainVM.Open", usersOnline);
 
 
