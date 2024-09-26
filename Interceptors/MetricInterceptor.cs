@@ -14,7 +14,6 @@ namespace wpfPocAPI.Interceptors
     [Injection(typeof(MetricInterceptor))]
     public class MetricInterceptor : Attribute
     {
-        private const string API_URL = @"http://localhost:3031/api/metrics/insert";
         private Stopwatch _stopwatch = new Stopwatch();
         private Metric _metric;
 
@@ -39,7 +38,7 @@ namespace wpfPocAPI.Interceptors
             {
                 try
                 {
-                    Task task = Services.Instance.PostJsonAsync(API_URL, _metric);
+                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), _metric);
                 }
                 catch (Exception ex)
                 {
@@ -64,7 +63,7 @@ namespace wpfPocAPI.Interceptors
 
                 try
                 {
-                    Task task = Services.Instance.PostJsonAsync(API_URL, _metric);
+                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), _metric);
                 }
                 catch (Exception ex)
                 {

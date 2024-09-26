@@ -12,5 +12,10 @@ namespace wpfPocAPI.Controllers
         {
             return MetricCatalogue.GetMetricByName(name);
         }
+
+        public static string GetAPIUrl(MetricType metricType)
+        {
+            return MetricCatalogue.GetAPIUrl(metricType);
+        }
     }
 }

@@ -12,6 +12,9 @@ namespace wpfPocAPI.Catalogue
     public static class MetricCatalogue
     {
         private static Dictionary<string, Metric> _metricsDictionary = new Dictionary<string, Metric>();
+        private const string API_URL = @"http://localhost:3031/api/metrics/";
+        private const string API_URI_GAUGE = API_URL + "insert/gauge";
+        private const string API_URI_HISTOGRAM = API_URL + "insert/histogram";
 
         static MetricCatalogue()
         {
@@ -78,6 +81,19 @@ namespace wpfPocAPI.Catalogue
             }
 
             return timesInMs;
+        }
+
+        public static string GetAPIUrl(MetricType metricType)
+        {
+            switch (metricType) 
+            { 
+                case MetricType.Gauge:
+                    return API_URI_GAUGE;
+                case MetricType.Histogram: 
+                    return API_URI_HISTOGRAM;
+                default:
+                    return API_URL;
+            }
         }
     }
 }
