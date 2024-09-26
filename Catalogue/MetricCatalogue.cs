@@ -40,9 +40,8 @@ namespace wpfPocAPI.Catalogue
                 MetricName = "gis_tempo_op_sap_segundos",
                 Help = "Tempo em segundos que o GIS levou para realizar as integrações com o SAP",
                 Type = MetricType.Histogram,
-                LabelNames = "operation".Split(),
-                Buckets = new int[] { 100, 300, 500, 800, 1000, 3000, 5000, 8000, 10000 },
-                LabelValues = labelValues
+                Label = new Label() { LabelNames = "operation".Split(), LabelValues = labelValues},
+                Buckets = new int[] { 100, 300, 500, 800, 1000, 3000, 5000, 8000, 10000 }
             };
         }
 
@@ -54,8 +53,7 @@ namespace wpfPocAPI.Catalogue
                 Help = "Número de usuários logados no momento",
                 Type = MetricType.Gauge,
                 Operation = operation,
-                LabelNames = "unity".Split(),
-                LabelValues = WegUnities.WTD_BNU.GetDescription().Split()
+                Label = new Label() { LabelNames = "unity".Split(), LabelValues = WegUnities.WTD_BNU.GetDescription().Split() }
             };
         }
 

@@ -8,8 +8,7 @@ namespace wpfPocAPI.Models
         public string MetricName { get; set; }
         public string Help { get; set; }
         public MetricType Type { get; set; }
-        public string[] LabelNames { get; set; } = new string[0];
-        public string[] LabelValues { get; set; } = new string[0];
+        public Label Label { get; set; }
 
         public WegUser User
         {

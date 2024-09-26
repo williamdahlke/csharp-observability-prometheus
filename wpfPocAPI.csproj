@@ -140,6 +140,7 @@
     <Compile Include="Models\Enums\MetricEnum.cs" />
     <Compile Include="Models\GaugeMetric.cs" />
     <Compile Include="Models\HistogramMetric.cs" />
+    <Compile Include="Models\Label.cs" />
     <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\WegUnity.cs" />
     <Compile Include="Models\WegUser.cs" />
