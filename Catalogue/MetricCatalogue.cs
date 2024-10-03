@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace wpfPocAPI.Catalogue
         private const string API_URL = @"http://localhost:3031/api/metrics/";
         private const string API_URI_GAUGE = API_URL + "insert/gauge";
         private const string API_URI_HISTOGRAM = API_URL + "insert/histogram";
+        private static readonly string API_KEY = ConfigurationManager.AppSettings["API_METRICS"];
 
         static MetricCatalogue()
         {
@@ -92,6 +94,11 @@ namespace wpfPocAPI.Catalogue
                 default:
                     return API_URL;
             }
+        }
+
+        public static string GetAPIKey()
+        {
+            return API_KEY;
         }
     }
 }

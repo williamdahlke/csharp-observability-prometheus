@@ -38,7 +38,7 @@ namespace wpfPocAPI.Interceptors
             {
                 try
                 {
-                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), _metric);
+                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), MetricController.GetAPIKey(), _metric);
                 }
                 catch (Exception ex)
                 {
@@ -63,7 +63,7 @@ namespace wpfPocAPI.Interceptors
 
                 try
                 {
-                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), _metric);
+                    Task task = Services.Instance.PostJsonAsync(MetricController.GetAPIUrl(_metric.Type), MetricController.GetAPIKey(), _metric);
                 }
                 catch (Exception ex)
                 {

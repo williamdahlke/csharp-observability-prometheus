@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using wpfPocAPI.Catalogue;
 using wpfPocAPI.Models;
 using wpfPocAPI.Models.Enums;
@@ -16,6 +17,11 @@ namespace wpfPocAPI.Controllers
         public static string GetAPIUrl(MetricType metricType)
         {
             return MetricCatalogue.GetAPIUrl(metricType);
+        }
+
+        public static string GetAPIKey()
+        {
+            return MetricCatalogue.GetAPIKey();
         }
     }
 }

@@ -35,12 +35,13 @@ namespace wpfPocAPI.Service
             MessageBox.Show("Entrou no método SaveProject da classe Services");
         }
 
-        public async Task PostJsonAsync(string url, object data)
+        public async Task PostJsonAsync(string url, string token, object data)
         {
             using (var client = new HttpClient())
             {
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 var response = await client.PostAsync(url, content);
 
