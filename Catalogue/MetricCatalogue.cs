@@ -13,9 +13,9 @@ namespace wpfPocAPI.Catalogue
     public static class MetricCatalogue
     {
         private static Dictionary<string, Metric> _metricsDictionary = new Dictionary<string, Metric>();
-        private const string API_URL = @"http://localhost:3031/api/metrics/";
-        private const string API_URI_GAUGE = API_URL + "insert/gauge";
-        private const string API_URI_HISTOGRAM = API_URL + "insert/histogram";
+        private const string API_URL = @"http://localhost:3031/automation/";
+        private const string API_URI_GAUGE = API_URL + "metrics/gauge";
+        private const string API_URI_HISTOGRAM = API_URL + "metrics/histogram";
         private static readonly string API_KEY = ConfigurationManager.AppSettings["API_METRICS"];
 
         static MetricCatalogue()
